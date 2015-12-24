@@ -20,7 +20,20 @@ grails.project.work.dir = 'work'
 grails.project.class.dir = 'target/classes'
 grails.project.test.class.dir = 'target/test-classes'
 grails.project.test.reports.dir = 'target/test-reports'
-grails.project.war.file = "target/${appName}.war"
+grails.project.war.file = "target/${appName}-ebextensions.war"
+
+//grails.war.resources = { stagingDir, args ->
+//    copy(todir: "${stagingDir}/migrations") {
+//        fileset(dir: "grails-app/migrations", includes: "*.xml")
+//    }
+//}
+
+grails.war.resources = { stagingDir, args ->
+	copy(todir:"${stagingDir}/.ebextensions") {
+		fileset(dir:".ebextensions")
+	}
+	//copy(file:".ebextensions/cwl-setup.config", tofile: "${stagingDirectory}/.ebextensions/cwl-setup.config")
+}
 
 grails.project.dependency.resolver = "maven"
 
@@ -82,7 +95,7 @@ grails.project.dependency.resolution = {
 
                 // Easier Java from of the Apache Foundation
                 'commons-lang:commons-lang:2.4',
-     
+
                 // Better Zip Support
                 'org.apache.commons:commons-compress:1.8',
 
