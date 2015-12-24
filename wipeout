@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This gets you to a super clean slate!
+# If you do this, you mus re-run 'process' to regenerate all.
+
+shopt -s nullglob
+
+exit 0
+
+# clean out s3 working bucket
+wipes3='aws --profile prod s3 rm s3://caen-ice-working/ice/ --recursive'
+echo $wipes3
+
+# clean out local processor folder
+wipeproc='rm -fr /Users/tknox/git/ice_work/processor'
+echo $wipeproc
+#mkdir /Users/tknox/git/ice_work/processor
+
+# clean out local reader folder
+wiperead='rm -fr /Users/tknox/git/ice_work/reader'
+echo $wiperead
+#mkdir /Users/tknox/git/ice_work/reader
+
+echo "Well now you've done it.  Re-run './process' to regenerate all."
+
+exit 0
