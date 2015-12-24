@@ -1,0 +1,11 @@
+
+dev-to-prod - add this so the IAM role in dev that needs to assume the prod role;
+
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::456387620915:role/dev-account-read-billing"
+  }
+}
