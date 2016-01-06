@@ -12,14 +12,14 @@ wipes3='aws --profile prod s3 rm s3://caen-ice-working/ice/ --recursive'
 echo $wipes3
 
 # clean out local processor folder
-wipeproc='rm -fr /Users/tknox/git/ice_work/processor'
+wipeproc='rm -fr /tmp/ice_work/processor'
 echo $wipeproc
-#mkdir /Users/tknox/git/ice_work/processor
+#mkdir /tmp/ice_work/processor
 
 # clean out local reader folder
-wiperead='rm -fr /Users/tknox/git/ice_work/reader'
+wiperead='rm -fr /tmp/ice_work/reader'
 echo $wiperead
-#mkdir /Users/tknox/git/ice_work/reader
+#mkdir /tmp/ice_work/reader
 
 echo "Well now you've done it.  Re-run './process' to regenerate all."
 
