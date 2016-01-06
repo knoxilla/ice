@@ -161,11 +161,16 @@ public class AwsUtils {
         AmazonS3Client s3Client = AwsUtils.s3Client;
 
         try {
+            logger.info("====>>> accountId " + accountId);
+            logger.info("====>>> assumeRole" + assumeRole);
             ListObjectsRequest request = new ListObjectsRequest().withBucketName(bucket).withPrefix(prefix);
             List<S3ObjectSummary> result = Lists.newLinkedList();
 
             if (!StringUtils.isEmpty(accountId) && !StringUtils.isEmpty(assumeRole)) {
                 Credentials assumedCredentials = getAssumedCredentials(accountId, assumeRole, externalId);
+                logger.info("===============>>> " + assumedCredentials.getAccessKeyId());
+                logger.info("===============>>> " + assumedCredentials.getSecretAccessKey());
+                logger.info("===============>>> " + assumedCredentials.getSessionToken());
                 s3Client = new AmazonS3Client(
                         new BasicSessionCredentials(assumedCredentials.getAccessKeyId(),
                                 assumedCredentials.getSecretAccessKey(),
@@ -263,8 +268,13 @@ public class AwsUtils {
         AmazonS3Client s3Client = AwsUtils.s3Client;
 
         try {
+            logger.info("====>>> accountId " + accountId);
+            logger.info("====>>> assumeRole" + assumeRole);
             if (!StringUtils.isEmpty(accountId) && !StringUtils.isEmpty(assumeRole)) {
                 Credentials assumedCredentials = getAssumedCredentials(accountId, assumeRole, externalId);
+                logger.info("===============>>> " + assumedCredentials.getAccessKeyId());
+                logger.info("===============>>> " + assumedCredentials.getSecretAccessKey());
+                logger.info("===============>>> " + assumedCredentials.getSessionToken());
                 s3Client = new AmazonS3Client(
                         new BasicSessionCredentials(assumedCredentials.getAccessKeyId(),
                                 assumedCredentials.getSecretAccessKey(),
