@@ -33,14 +33,14 @@
     <div class="header" style="padding-top:15px; height:43px">
       <a href="${resource(dir: '/')}">
         <span class="mainHeader">
-          ${ReaderConfig.getInstance().companyName} AWS Usage Dashboard
+         <!-- ${ReaderConfig.getInstance().companyName} AWS Usage Dashboard -->
         </span>
       </a>
     </div>
   </div>
   <ul class="nav" ng-show="!graphOnly()">
     <li class="menuButton">
-        <a class="" href="${resource(dir: 'dashboard', file: 'summary')}" ng-click="reload()">AWS Summary</a>
+        <a class="" href="${resource(dir: 'dashboard')}" ng-click="reload()">AWS Summary</a>
     </li>
     <li class="menuButton dropdown">
       <a class="link_with_params" href="${resource(dir: 'dashboard', file: 'detail')}#{{getTimeParams()}}" ng-click="reload()">AWS Details</a>

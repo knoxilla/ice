@@ -5,7 +5,7 @@ a, input     { outline: none; }
 p            { padding: 10px 0; }
 img          { border: none; }
 .titlebar a:link, .titlebar a:visited, .titlebar a:hover { color: #FFF !important; }
-.titlebar                 { background-color: #000; color: #FFF; padding: 0 0 0 5px; height: 58px; clear: both; min-width: 885px; }
+.titlebar                 { background-color: #215587; color: #FFF; padding: 0 0 0 5px; height: 58px; clear: both; min-width: 885px; }
 .prod .titlebar,
 .prod .titlebar .cmc,
 .prod .titlebar .region   { background-color: #E9231B; }
@@ -13,7 +13,7 @@ img          { border: none; }
 .prod .titlebar span      { text-shadow: #000 4px 4px 2px; }
 .titlebar span.mainHeader { padding: 10px 16px 10px 10px; }
 .titlebar img.console     { margin-right: 6px; height: 58px; }
-.titlebar .header         { float: left; height: 58px; }
+.titlebar .header         { float: left; background: url("../images/coe-reversed.svg") 35px center no-repeat; width: 80%; background-size: auto 70%; }
 .titlebar .region         { float: left; margin: 0 7px 0 0; }
 .titlebar .region form    { float: left; display: inline-block; vertical-align: top; padding: 5px 5px 0 0; }
 .titlebar .region img     { float: left; display: inline-block; }
