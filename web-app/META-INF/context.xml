@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	<Realm className="org.apache.catalina.realm.MemoryRealm"
+		pathname="${user.dir}/webapps/ROOT/WEB-INF/iceusers.xml"/>
+<!--
+	- user.dir will be grails project dir in devel/embedded mode
+	- user.dir will be catalina.home or catalina.base in prod/war mode
+	- b/c project dir has 'web-app/WEB-INF' versus 'webapps/ROOT/WEB-INF'
+			we have done 'ln -s ../web-app webapps/ROOT' in local devel
+-->
+</Context>
