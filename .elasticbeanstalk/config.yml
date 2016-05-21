@@ -1,0 +1,12 @@
+branch-defaults:
+  feature-eb:
+    environment: caenIce-tea
+deploy:
+  artifact: target/ice-ebextensions.war
+global:
+  application_name: caen-ice
+  default_ec2_keyname: tknox-december
+  default_platform: 64bit Amazon Linux 2014.09 v1.2.0 running Tomcat 7 Java 7
+  default_region: us-east-1
+  profile: null
+  sc: git
