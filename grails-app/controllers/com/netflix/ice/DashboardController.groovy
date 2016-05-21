@@ -65,7 +65,18 @@ class DashboardController {
     }
 
     def index = {
-        redirect(action: "summary")
+        // redirect with query params to cover year-to-end-of-this-month
+        def now = new Date()
+        def year = now[Calendar.YEAR]
+        def month = now[Calendar.MONTH] + 1
+        def lastday = 42
+        Calendar.with {
+            lastday = instance.getActualMaximum(DATE)
+        }
+        def begin = "${year}-01-01 12AM"
+        def finish = "${year}-${month}-${lastday} 12AM"
+        redirect(uri: "/dashboard/summary#start=${begin}&end=${finish}")
+        //redirect(action: "summary", fragment: "start=${begin}&end=${finish}")
     }
 
     def getAccounts = {
