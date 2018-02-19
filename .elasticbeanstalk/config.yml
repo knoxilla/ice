@@ -1,6 +1,6 @@
 branch-defaults:
   feature-eb:
-    environment: caenIce-cube
+    environment: caenIce-bucket
 deploy:
   artifact: target/ice-ebextensions.war
 global:
